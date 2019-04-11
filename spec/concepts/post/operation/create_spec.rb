@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'shared_examples/validates_presence_of'
 
 describe Post::Operation::Create do
   let(:call_operation) { described_class.(params) }
@@ -31,6 +32,16 @@ describe Post::Operation::Create do
   end
 
   describe "validations" do
-    # TODO: test all validations
+    let!(:params) do
+      {
+        title: 'Post test',
+        markdown_body: '## **markdown body**'
+      }
+    end
+    let(:errors) { call_operation["contract.default"].errors }
+
+    it_behaves_like "validates_presence_of",
+      title: "Post test",
+      markdown_body: "## **markdown body**"
   end
 end

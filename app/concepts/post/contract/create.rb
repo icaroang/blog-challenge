@@ -3,5 +3,6 @@ class Post::Contract
     property :title
     property :markdown_body
 
+    validates :title, :markdown_body, presence: true
   end
 end
