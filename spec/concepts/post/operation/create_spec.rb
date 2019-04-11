@@ -28,7 +28,25 @@ describe Post::Operation::Create do
   end
 
   describe "without success" do
-    # TODO: test failures
+    context "when passing invalid params"
+    let!(:params) do
+      {
+        title: '', # Set invalid title
+        markdown_body: '## **markdown body**'
+      }
+    end
+
+    it "returns failure result" do
+      result = call_operation
+      expect(result).to be_failure
+    end
+    
+    it "doesn't create post" do
+      expect { call_operation }.to change(Post, :count).by(0)
+    end
+
+    xit "doesn't schedule the markdown parser job" do
+    end
   end
 
   describe "validations" do
