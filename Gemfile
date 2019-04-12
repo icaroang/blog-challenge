@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'trailblazer', '2.0.7'
 gem 'trailblazer-rails', '1.0.9'
 
+# Sidekiq is a async worker manager. Read more: http://sidekiq.org/
+gem 'sidekiq', '5.2.3'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

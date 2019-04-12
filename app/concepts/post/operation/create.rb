@@ -16,11 +16,10 @@ module Post::Operation
     step Nested(New)
     step Contract::Validate()
     step Contract::Persist()
-    step :schedule_markdown_parser_job
+    success :schedule_markdown_parser_job
 
     def schedule_markdown_parser_job(options, model:, **)
-      # TODO: create job and finish step
-      true
+      MarkdownParserJob.perform_async(model.id)
     end
   end
 end

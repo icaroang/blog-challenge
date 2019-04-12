@@ -22,7 +22,9 @@ describe Post::Operation::Create do
         expect { call_operation }.to change(Post, :count).by(1)
       end
 
-      xit "schedules the markdown parser job" do
+      it "schedules the markdown parser job" do
+        expect(MarkdownParserJob).to receive(:perform_async).and_call_original
+        call_operation
       end
     end
   end
@@ -45,7 +47,9 @@ describe Post::Operation::Create do
       expect { call_operation }.to change(Post, :count).by(0)
     end
 
-    xit "doesn't schedule the markdown parser job" do
+    it "doesn't schedule the markdown parser job" do
+      expect(MarkdownParserJob).to_not receive(:perform_async).and_call_original
+      call_operation
     end
   end
 
