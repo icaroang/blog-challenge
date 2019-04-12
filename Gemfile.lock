@@ -85,6 +85,8 @@ GEM
       railties (>= 3.2, < 6.1)
     erubi (1.8.0)
     execjs (2.7.0)
+    factory_bot (5.0.2)
+      activesupport (>= 4.2.0)
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -257,6 +259,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   dotenv-rails (~> 2.7, >= 2.7.2)
+  factory_bot (~> 5.0, >= 5.0.1)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
