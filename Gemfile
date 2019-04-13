@@ -50,6 +50,7 @@ group :development, :test do
   gem 'dotenv-rails', '~> 2.7', '>= 2.7.2'
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_bot', '~> 5.0', '>= 5.0.1'
+  gem 'database_cleaner', '~> 1.6'
 end
 
 group :development do
@@ -67,6 +68,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'pry-byebug', '~> 3.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
