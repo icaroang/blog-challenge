@@ -4,8 +4,8 @@ module Post::Operation
       step :model!
       step Contract::Build(builder: :contract_builder)
 
-      def model!(options, params:, **)
-        options["model"] = Post.new(params)
+      def model!(options, **)
+        options["model"] = Post.new
       end
 
       def contract_builder(options, model:, **)

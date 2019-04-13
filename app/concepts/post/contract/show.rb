@@ -4,7 +4,7 @@ module Post::Contract
 
     def can_be_show?
       return if model.html_body.present?
-      errors.add(:base, "não pode ser visualizada")
+      errors.add(:base, "não pode ser visualizado")
     end
   end
 end

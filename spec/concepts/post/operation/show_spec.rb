@@ -33,7 +33,7 @@ describe Post::Operation::Show do
       context "when html_body isn't present" do
         let(:post) { create(:post) }
         it "adds error" do
-          expect(errors[:base]).to include("não pode ser visualizada")
+          expect(errors[:base]).to include("não pode ser visualizado")
         end
       end
     
@@ -41,7 +41,7 @@ describe Post::Operation::Show do
         let(:post) { create(:post_with_html_body) }
         
         it "doesn't add error" do
-          expect(errors[:base]).to_not include("não pode ser visualizada")
+          expect(errors[:base]).to_not include("não pode ser visualizado")
         end
       end
     end
