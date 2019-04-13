@@ -1,0 +1,6 @@
+<%= simple_form_for(@form) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :markdown_body, as: :text %>
+
+  <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+<% end %>
