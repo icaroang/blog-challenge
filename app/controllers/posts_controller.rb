@@ -17,7 +17,7 @@ class PostsController < ApplicationController
       return redirect_to posts_path
     end
 
-    flash[:notice] = 'Não foi possível criar a postagem.'
+    flash[:info] = 'Não foi possível criar a postagem.'
     render :new
   end
 
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
       return redirect_to post_path(@model)
     end
 
-    flash[:notice] = 'Não foi possível atualizar a postagem.'
+    flash[:info] = 'Não foi possível atualizar a postagem.'
     render :edit
   end
 
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
       return render :show
     end
 
-    flash[:notice] = 'Não foi possível visualizar esta postagem.'
+    flash[:info] = 'Não foi possível visualizar esta postagem.'
     redirect_to posts_path
   end
 

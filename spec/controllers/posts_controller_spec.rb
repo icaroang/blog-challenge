@@ -77,9 +77,9 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to render_template('new')
       end
 
-      it "sets flash notice message" do
+      it "sets flash info message" do
         post :create, params: { post: params }
-        expect(flash[:notice]).to eql('Não foi possível criar a postagem.')
+        expect(flash[:info]).to eql('Não foi possível criar a postagem.')
       end
     end
   end
@@ -144,9 +144,9 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to render_template('edit')
       end
 
-      it "sets flash notice message" do
+      it "sets flash info message" do
         put :update, params: params
-        expect(flash[:notice]).to eql('Não foi possível atualizar a postagem.')
+        expect(flash[:info]).to eql('Não foi possível atualizar a postagem.')
       end
     end
   end
@@ -182,9 +182,9 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to redirect_to(posts_path)
       end
 
-      it "sets flash notice message" do
+      it "sets flash info message" do
         get :show, params: params        
-        expect(flash[:notice]).to eql('Não foi possível visualizar esta postagem.')
+        expect(flash[:info]).to eql('Não foi possível visualizar esta postagem.')
       end
     end
   end

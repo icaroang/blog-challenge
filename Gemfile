@@ -75,6 +75,7 @@ group :test do
   gem 'rspec-sidekiq'
   gem 'pry-byebug', '~> 3.5'
   gem 'rails-controller-testing', '1.0.1'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
