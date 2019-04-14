@@ -1,6 +1,56 @@
-<%= simple_form_for(@form) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :markdown_body, as: :text %>
 
-  <%= f.submit 'Salvar', class: 'btn btn-primary' %>
-<% end %>
+<!-- Page Header -->
+<header class="masthead" style="background-image: url(<%= asset_path 'form-post-bg.jpg' %>)">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1><%= @model.persisted? ? 'Editar' : 'Criar' %> postagem</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <%= simple_form_for(@form) do |f| %>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Título</label>
+            <%= f.input :title, class: "form-control", placeholder: 'Título' %>
+            <p class="help-block text-danger"></p>
+          </div>
+          
+          <div class="form-group floating-label-form-group controls">
+            <label>Texto em markdown</label>
+            <%= f.input :markdown_body, as: :text, class: 'form-control', placeholder: 'Texto em markdown' %>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p class="copyright text-muted">Copyright &copy; Blog Challange 2019</p>
+      </div>
+    </div>
+  </div>
+</footer>

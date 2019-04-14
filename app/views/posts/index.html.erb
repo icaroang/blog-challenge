@@ -24,6 +24,10 @@
             </h2>
           <p class="post-meta">
             Postado por <%= post.user.email %>
+            <% if user_signed_in? %>
+              <br>
+              <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-primary' %>
+            <% end %>
           </p>
         </a>
         </div>
