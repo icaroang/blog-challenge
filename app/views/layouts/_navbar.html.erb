@@ -1,0 +1,29 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Blog Challange</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to 'Página Inicial', root_path %>
+        </li>
+        <li class="nav-item">
+          <% if user_signed_in? %>
+            <%= link_to 'Nova postagem', new_post_path %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <% if user_signed_in? %>
+            <%= link_to "Sair", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          <% else %>
+            <%= link_to "Fazer login", new_user_session_path, class: 'nav-link' %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

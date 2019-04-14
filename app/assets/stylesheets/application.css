@@ -12,5 +12,17 @@
  *
  *= require_tree .
  *= require bootstrap/dist/css/bootstrap
+ *= require startbootstrap-clean-blog/css/clean-blog.min
  *= require_self
  */
+
+.alert {
+  position: absolute;
+  z-index: 9999;
+}
+
+.alert-notice {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
