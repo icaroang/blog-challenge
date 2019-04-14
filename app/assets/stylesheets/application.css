@@ -1,4 +1,4 @@
-/*
+  /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -15,14 +15,19 @@
  *= require startbootstrap-clean-blog/css/clean-blog.min
  *= require_self
  */
-
-.alert {
-  position: absolute;
-  z-index: 9999;
-}
-
-.alert-notice {
-  color: #0c5460;
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
-}
+  
+  .alert {
+    position: absolute;
+    z-index: 9999;
+  }
+  
+  .alert-notice {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+  }
+  
+  .floating-label-form-group textarea {
+    resize: both;
+    height: 200px;
+  }
