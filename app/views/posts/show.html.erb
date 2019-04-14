@@ -1,2 +1,40 @@
-<h1>Posts#show</h1>
-<%= raw @model.html_body %>
+<!-- Page Header -->
+<header class="masthead" style="background-image: url(<%= asset_path 'show-bg.jpg' %>)">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1><%= @model.title %></h1>
+          <p class="post-meta">
+            Postado por <%= @model.user.email %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <%= raw @model.html_body %>
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p class="copyright text-muted">Copyright &copy; Blog Challange 2019</p>
+      </div>
+    </div>
+  </div>
+</footer>
