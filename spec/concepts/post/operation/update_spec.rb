@@ -2,6 +2,9 @@ require 'rails_helper'
 require 'shared_examples/validates_presence_of'
 
 describe Post::Operation::Update do
+  let(:user) { create(:user) }
+  before { sign_in user }
+
   let(:post) { create(:post) }
   let(:call_operation) { described_class.(params) }
 

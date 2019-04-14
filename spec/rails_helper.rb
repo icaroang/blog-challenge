@@ -43,6 +43,8 @@ RSpec.configure do |config|
   config.before(:suite) do
     FactoryBot.find_definitions
   end
+  
+  config.include Devise::Test::IntegrationHelpers
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

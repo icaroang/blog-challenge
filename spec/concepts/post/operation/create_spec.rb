@@ -2,7 +2,10 @@ require 'rails_helper'
 require 'shared_examples/validates_presence_of'
 
 describe Post::Operation::Create do
-  let(:call_operation) { described_class.(params) }
+  let(:user) { create(:user) }
+  before { sign_in user }
+
+  let(:call_operation) { described_class.(params, 'current_user': user) }
 
   describe "with success" do
     context "when passing valid params" do
