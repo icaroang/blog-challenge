@@ -8,11 +8,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    run Post::Operation::Create::New
+    run Post::Operation::Create::New, params, 'current_user': current_user
   end
 
   def create
-    run Post::Operation::Create, posts_params do
+    run Post::Operation::Create, posts_params, 'current_user': current_user do
       flash[:success] = 'Postagem criada com sucesso.'
       return redirect_to posts_path
     end
@@ -22,11 +22,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    run Post::Operation::Update::Present, params
+    run Post::Operation::Update::Present, params, 'current_user': current_user
   end
 
   def update
-    run Post::Operation::Update, posts_params.merge(params.permit(:id)) do
+    run Post::Operation::Update, posts_params.merge(params.permit(:id)), 'current_user': current_user do
       flash[:success] = 'Postagem atualizada com sucesso.'
       return redirect_to post_path(@model)
     end

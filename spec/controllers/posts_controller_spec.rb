@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  
+  let(:user) { create(:user) }
+  before { sign_in user }
+
   describe "#index" do
     let!(:post1) { create(:post_with_html_body) }
     let!(:post2) { create(:post_with_html_body) }

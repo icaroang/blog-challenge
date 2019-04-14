@@ -4,7 +4,7 @@ module Post::Contract::Concerns
 
     property :title
     property :markdown_body
-    property :current_user, virtual: true
+    property :user
 
     validates :title, :markdown_body, presence: true
   end

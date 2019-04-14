@@ -6,7 +6,7 @@ describe Post::Operation::Update do
   before { sign_in user }
 
   let(:post) { create(:post) }
-  let(:call_operation) { described_class.(params) }
+  let(:call_operation) { described_class.(params, current_user: user) }
 
   describe "with success" do
     context "when passing valid params" do

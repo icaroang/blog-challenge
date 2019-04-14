@@ -8,8 +8,8 @@ module Post::Operation
         options["model"] = Post.find_by(id: params[:id])
       end
 
-      def contract_builder(options, model:, **)
-        Post::Contract::Update.new(model)
+      def contract_builder(options, model:, current_user:, **)
+        Post::Contract::Update.new(model, user: current_user)
       end
     end
 
