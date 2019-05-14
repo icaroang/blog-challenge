@@ -1,0 +1,51 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url(<%= asset_path 'home-bg.jpg' %>)">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Blog Challange</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% @posts.each do |post| %>
+        <div class="post-preview">
+          <a href="<%= post_path(post) %>">
+            <h2 class="post-title">
+              <%= post.title %>
+            </h2>
+          <p class="post-meta">
+            Postado por <%= post.user.email %>
+            <% if user_signed_in? %>
+              <br>
+              <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-primary' %>
+            <% end %>
+          </p>
+        </a>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p class="copyright text-muted">Copyright &copy; Blog Challange 2019</p>
+      </div>
+    </div>
+  </div>
+</footer>

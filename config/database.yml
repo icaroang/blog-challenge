@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV['RAILS_DB_POOL'] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  # IMPORTANT: in development, the DATABASE_URL env var should NOT be
+  # "complete", it should NOT provide the "database name" parameter (we set it
+  # here in this file below).
+  #
+  # For example:
+  #   DATABASE_URL='postgres://postgres:postgres@localhost' # ok!
+  #   DATABASE_URL='postgres://postgres:postgres@localhost/blog_challange_development' # wrong!
+  url: <%= ENV['DATABASE_URL'] %>
+
+development: &development
+  <<: *default
+  database: blog_challange_development
+
+test:
+  <<: *default
+  database: blog_challange_test
+
+production:
+  <<: *default
